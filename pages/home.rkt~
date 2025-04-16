@@ -1,0 +1,19 @@
+#lang racket
+
+(require web-server/http
+         web-server/response
+         "../templates/layout.rkt")
+
+(define (home-page req)
+  (render-page
+   "Home - Racket Web App"
+   @xhtml
+   (div ((class "content"))
+        (h1 "Welcome to Racket Web App")
+        (p "Racket is a general-purpose, multi-paradigm programming language based on the Scheme dialect of Lisp.")
+        (h2 "Key Features:")
+        (ul
+         (li "Powerful macro system")
+         (li "Great for scripting, web development, and education")
+         (li "Built-in web server")
+         (li "Rich documentation and package system")))))

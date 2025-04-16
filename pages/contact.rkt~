@@ -1,0 +1,16 @@
+#lang racket
+
+(require web-server/http
+         web-server/response
+         "../templates/layout.rkt")
+
+(define (contact-page req)
+  (render-page
+   "Contact"
+   @xhtml
+   (div ((class "content"))
+        (h1 "Contact Us")
+        (p "You can contact us at: ")
+        (ul
+         (li "Email: contact@racketapp.com")
+         (li "Twitter: @racketapp")))))

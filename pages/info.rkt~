@@ -1,0 +1,14 @@
+#lang racket
+
+(require web-server/http
+         web-server/response
+         "../templates/layout.rkt")
+
+(define (info-page req)
+  (render-page
+   "Information"
+   @xhtml
+   (div ((class "content"))
+        (h1 "Information Page")
+        (p "This web application is built using Racket's built-in web server.")
+        (p "Racket is ideal for education, scripting, research, and even full-scale applications."))))
